@@ -86,7 +86,7 @@ export default async function TownLandingPage({ params }: PageProps) {
               className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_20px_rgba(255,217,0,0.25)] hover:scale-[1.02] active:scale-[0.98] animate-[pulse_2.8s_ease-in-out_infinite]"
             >
               <Phone className="h-4 w-4 fill-current" />
-              Call 07742 831011
+              Tap to Call Now
             </a>
             <a
               href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith%20in%20"

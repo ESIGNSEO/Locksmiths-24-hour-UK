@@ -25,7 +25,7 @@ export default function Footer() {
             </p>
             <div className="flex items-center gap-2 text-primary font-bold text-lg pt-2">
               <Phone className="h-5 w-5 fill-current" />
-              <a href="tel:07742831011" className="hover:underline">07742 831011</a>
+              <a href="tel:07742831011" className="hover:underline">Tap to Call Now</a>
             </div>
             <div className="flex items-center gap-2 text-xs text-[#8c97ad] bg-[#141c34] border border-[#2e364d] p-3 rounded-xl max-w-md">
               <ShieldCheck className="h-5 w-5 text-primary shrink-0" />

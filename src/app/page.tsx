@@ -54,7 +54,7 @@ export default function Home() {
               className="flex items-center justify-center gap-3 w-full py-4 px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg uppercase tracking-wider transition-premium shadow-[0_8px_32px_rgba(255,217,0,0.25)] hover:shadow-[0_12px_40px_rgba(255,217,0,0.45)] hover:-translate-y-0.5 active:scale-[0.98] animate-[pulse_2.8s_ease-in-out_infinite]"
             >
               <Phone className="h-5 w-5 fill-current" />
-              Call 07742 831011
+              Tap to Call Now
             </a>
             <a
               href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith"

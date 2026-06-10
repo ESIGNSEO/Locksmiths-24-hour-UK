@@ -61,7 +61,7 @@ export default function Header() {
             className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(255,217,0,0.25)] hover:shadow-[0_6px_24px_rgba(255,217,0,0.4)]"
           >
             <Phone className="h-4 w-4 fill-current animate-pulse" />
-            07742 831011
+            Tap to Call
           </a>
         </div>
 
@@ -100,7 +100,7 @@ export default function Header() {
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-black uppercase tracking-wider text-center"
             >
               <Phone className="h-4 w-4 fill-current" />
-              07742 831011
+              Tap to Call
             </a>
           </div>
         </div>
