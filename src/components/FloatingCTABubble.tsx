@@ -84,7 +84,7 @@ export default function FloatingCTABubble() {
         /* Collapsed Pulse Button */
         <button
           onClick={() => handleToggle(true)}
-          className="fixed right-4 sm:right-6 bottom-[88px] md:bottom-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_6px_24px_rgba(255,217,0,0.35)] transition-premium hover:scale-110 active:scale-90 animate-[pulse_2.8s_ease-in-out_infinite]"
+          className="fixed right-4 sm:right-6 bottom-[88px] md:bottom-6 z-40 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_6px_24px_rgba(255,217,0,0.35)] transition-premium hover:scale-110 active:scale-90 animate-[pulse_2.8s_ease-in-out_infinite] cursor-pointer"
           aria-label="Show contact options"
         >
           <MessageCircle className="h-6 w-6 stroke-[2.5]" />
