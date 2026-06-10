@@ -20,3 +20,9 @@ updated: 2026-06-10
 - **No Email Address:** Emails are strictly forbidden on the website.
 - **Coverage:** Limited to England, Scotland, and Wales (excluding Northern Ireland).
 - **Auto-Locksmith Limitations:** Explicitly states that car locksmith services are strictly limited to opening locked vehicles (no car key cutting, remote programming, or transponder configuration).
+
+## Floating Contact Widget
+- **Component:** `src/components/FloatingCTABubble.tsx`
+- **Features:** Floating contact widget on the bottom right corner with toggle buttons ("Tap to Call", "WhatsApp Us") and subtext ("Open 24/7 · No call-out fee").
+- **UX Constraints:** Fully collapsible into a pulsing round trigger bubble. Collapsed/expanded state persists using `sessionStorage`. Offset vertically on mobile viewports (`bottom-[88px]`) to avoid visual collision with the bottom-sticky mobile action bar.
+
