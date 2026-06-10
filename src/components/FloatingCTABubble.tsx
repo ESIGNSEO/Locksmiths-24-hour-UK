@@ -38,7 +38,7 @@ export default function FloatingCTABubble() {
           {/* Close Button */}
           <button
             onClick={() => handleToggle(false)}
-            className="absolute top-3 right-3 flex h-7 w-7 items-center justify-center rounded-full bg-secondary/80 text-muted-foreground hover:text-foreground hover:bg-secondary transition-premium"
+            className="absolute top-3 right-3 flex h-7 w-7 items-center justify-center rounded-full bg-secondary/80 text-muted-foreground hover:text-foreground hover:bg-secondary transition-premium cursor-pointer"
             aria-label="Hide contact widget"
           >
             <X className="h-4 w-4" />
