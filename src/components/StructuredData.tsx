@@ -7,8 +7,8 @@ interface StructuredDataProps {
 
 export default function StructuredData({ townName, slug }: StructuredDataProps) {
   const url = slug 
-    ? `https://locksmiths24hour.co.uk/${slug}`
-    : 'https://locksmiths24hour.co.uk';
+    ? `https://locksmith24hour.co.uk/${slug}`
+    : 'https://locksmith24hour.co.uk';
     
   const name = townName 
     ? `Locksmith 24 Hour - ${townName}` 
@@ -24,7 +24,7 @@ export default function StructuredData({ townName, slug }: StructuredDataProps) 
     "name": name,
     "alternateName": "locksmith24hour.co.uk",
     "url": url,
-    "logo": "https://locksmiths24hour.co.uk/logo.png",
+    "logo": "https://locksmith24hour.co.uk/logo.png",
     "telephone": "07742 831011",
     "description": description,
     "areaServed": townName ? [

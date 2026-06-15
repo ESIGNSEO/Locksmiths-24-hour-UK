@@ -33,7 +33,7 @@ export default function Header() {
             <Key className="h-5 w-5 stroke-[2.5]" />
           </div>
           <span className="text-lg font-black tracking-tight uppercase text-foreground">
-            Locksmiths<span className="text-primary font-black">24hour</span>
+            Locksmith<span className="text-primary font-black">24hour</span>
           </span>
         </Link>
 

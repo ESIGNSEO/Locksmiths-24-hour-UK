@@ -2,7 +2,7 @@ import React from 'react';
 import { Phone, MessageSquare, Unlock, Key, ShieldAlert, CheckCircle, Shield, Award } from 'lucide-react';
 
 export const metadata = {
-  title: "Our Services — 24 Hour Emergency Locksmith | Locksmiths24hour",
+  title: "Our Services — 24 Hour Emergency Locksmith | Locksmith24hour",
   description: "Emergency lockout, lock change, UPVC repair, key extraction, safes, commercial security. All work by DBS‑checked staff, BS3621 locks. Cars ONLY opened — call 24/7.",
 };
 

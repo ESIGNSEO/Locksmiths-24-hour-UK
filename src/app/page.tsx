@@ -5,7 +5,7 @@ import StructuredData from '@/components/StructuredData';
 import { locations } from '@/data/locations';
 
 export const metadata = {
-  title: "Locksmiths24hour | 24/7 Emergency Locksmith | DBS Checked | BS3621 Approved",
+  title: "Locksmith24hour | 24/7 Emergency Locksmith | DBS Checked | BS3621 Approved",
   description: "Local locksmiths across England, Scotland & Wales — arrive ≤30 mins, no call‑out fee, all locks insurance‑approved, DBS‑checked technicians. Open 24/7 — call now!",
 };
 
@@ -97,7 +97,7 @@ export default function Home() {
             {/* Visual Feature List */}
             <div className="space-y-6">
               <h2 className="text-3xl sm:text-4xl font-black tracking-tight uppercase">
-                Locksmiths<span className="text-primary">24hour</span> Service Standards
+                Locksmith<span className="text-primary">24hour</span> Service Standards
               </h2>
               <p className="text-muted-foreground leading-relaxed">
                 When security matters, you need local locksmiths who live and work right in your area. Our network covers every major county across England, Scotland, and Wales, providing professional, certified locksmith engineers directly to your door.
@@ -246,12 +246,19 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-10 text-center">
+          <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/areas-covered"
-              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-secondary text-secondary-foreground font-bold hover:bg-secondary/80 transition-premium shadow-sm"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl bg-secondary text-secondary-foreground font-bold hover:bg-secondary/80 transition-premium shadow-sm w-full sm:w-auto justify-center"
             >
               View Full Location Directory
+              <ChevronRight className="h-5 w-5" />
+            </Link>
+            <Link
+              href="/prices"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-2xl border-2 border-border hover:bg-secondary hover:border-muted-foreground/30 text-foreground font-bold transition-premium shadow-sm w-full sm:w-auto justify-center"
+            >
+              View Locksmith Prices
               <ChevronRight className="h-5 w-5" />
             </Link>
           </div>
