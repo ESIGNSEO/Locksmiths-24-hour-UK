@@ -4,7 +4,7 @@ import { Phone, MessageSquare, MapPin } from 'lucide-react';
 import { locations } from '@/data/locations';
 
 export const metadata = {
-  title: "Areas Covered | Locksmiths24hour | All Towns England Scotland Wales",
+  title: "Areas Covered | Locksmith24hour | All Towns England Scotland Wales",
   description: "We operate in every town, city, village & hamlet across England, Scotland & Wales — no Northern Ireland. Local team ≤30 mins — find your location here.",
 };
 

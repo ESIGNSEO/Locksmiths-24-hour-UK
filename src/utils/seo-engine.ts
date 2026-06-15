@@ -59,7 +59,7 @@ export function generateSEOContent(townName: string, countyName: string, postcod
 
   // H1 Spintax Variations
   const h1Spintax = parseSpintax(
-    "{Locksmith In [Town] | [Town] Locksmiths | Local Locksmith In [Town] | 24 Hour Locksmith [Town]} | Locksmiths24hour | {Local Team | Arrive In 30 Minutes Max | DBS Checked}",
+    "{Locksmith In [Town] | [Town] Locksmiths | Local Locksmith In [Town] | 24 Hour Locksmith [Town]} | Locksmith24hour | {Local Team | Arrive In 30 Minutes Max | DBS Checked}",
     random
   );
 
@@ -98,7 +98,7 @@ export function generateSEOContent(townName: string, countyName: string, postcod
 
   // Why Choose Us Paragraph
   const whyChooseUsSpintax = parseSpintax(
-    "{When you call Locksmiths24hour in [Town], you are supporting a local service that prioritises your security. We guarantee a maximum 30-minute response time, carry no call-out fees, and guarantee all parts and labour.|Our reputation in [County] is built on trust, transparency, and high standards of workmanship. We agree on the price before starting, employ DBS-checked professionals, and work around the clock.|Your security is our primary focus. We provide rapid-response emergency locksmith services 365 days a year across [Town], with fully insured technicians and Yale/Chubb approved security upgrades.}",
+    "{When you call Locksmith24hour in [Town], you are supporting a local service that prioritises your security. We guarantee a maximum 30-minute response time, carry no call-out fees, and guarantee all parts and labour.|Our reputation in [County] is built on trust, transparency, and high standards of workmanship. We agree on the price before starting, employ DBS-checked professionals, and work around the clock.|Your security is our primary focus. We provide rapid-response emergency locksmith services 365 days a year across [Town], with fully insured technicians and Yale/Chubb approved security upgrades.}",
     random
   );
 

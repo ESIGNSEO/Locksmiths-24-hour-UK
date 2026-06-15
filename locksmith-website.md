@@ -1,6 +1,6 @@
 # Implementation Plan - Unique SEO-Optimised Locksmith Website (1,400 Landing Pages)
 
-We will build a high-performance, responsive, and SEO-optimised locksmith service website for `locksmiths24hour.co.uk` covering England, Scotland, and Wales (excluding Northern Ireland). The application will be built using Next.js (App Router, Static Site Generation) and Tailwind CSS, fully replicating the premium dark/light HSL design, typography, spacing, border-radii, animations, and sticky action bars from the live demo site (`https://flomaftei.getsbg.com/`).
+We will build a high-performance, responsive, and SEO-optimised locksmith service website for `locksmith24hour.co.uk` covering England, Scotland, and Wales (excluding Northern Ireland). The application will be built using Next.js (App Router, Static Site Generation) and Tailwind CSS, fully replicating the premium dark/light HSL design, typography, spacing, border-radii, animations, and sticky action bars from the live demo site (`https://flomaftei.getsbg.com/`).
 
 ---
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Phone, MessageSquare, ShieldCheck, Award, ShieldAlert } from 'lucide-react';
 
 export const metadata = {
-  title: "About Us — Locksmiths24hour | DBS Checked | BS3621 Approved",
+  title: "About Us — Locksmith24hour | DBS Checked | BS3621 Approved",
   description: "22 years trusted locksmith service. All staff DBS‑checked, locks insurance‑approved, local teams nationwide, 24/7, no call‑out fee.",
 };
 
@@ -14,7 +14,7 @@ export default function AboutUs() {
         {/* Title */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-black tracking-tight uppercase text-foreground">
-            About Locksmiths24hour
+            About Locksmith24hour
           </h1>
           <p className="text-lg text-muted-foreground">
             Providing trusted local locksmith services across Great Britain since 2004.
@@ -25,7 +25,7 @@ export default function AboutUs() {
         <div className="space-y-4">
           <h2 className="text-2xl font-black uppercase text-foreground">Our History & Model</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Founded in 2004, Locksmiths24hour began as a family-run locksmith team based on a simple but effective model: **truly local response**. Instead of dispatching engineers from distant call centres, we work with locksmith technicians permanently based directly within your local community. 
+            Founded in 2004, Locksmith24hour began as a family-run locksmith team based on a simple but effective model: **truly local response**. Instead of dispatching engineers from distant call centres, we work with locksmith technicians permanently based directly within your local community. 
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Over the past 22 years, our network has expanded to cover every main town and city across England, Scotland, and Wales. By keeping our engineers local, we guarantee a maximum 30-minute response time for emergency situations, day or night.

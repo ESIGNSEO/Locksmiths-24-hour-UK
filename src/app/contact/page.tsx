@@ -3,7 +3,7 @@ import { Phone, MessageSquare, HelpCircle } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 
 export const metadata = {
-  title: "Contact Us — 24 Hour Locksmith | Locksmiths24hour",
+  title: "Contact Us — 24 Hour Locksmith | Locksmith24hour",
   description: "Call or WhatsApp 24/7 — tell us your town/village/postcode. Local locksmith arrives ≤30 mins, no call‑out fee.",
 };
 

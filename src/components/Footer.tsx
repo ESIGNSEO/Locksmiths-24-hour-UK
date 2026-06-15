@@ -17,7 +17,7 @@ export default function Footer() {
                 <Key className="h-5 w-5 stroke-[2.5]" />
               </div>
               <span className="text-lg font-black tracking-tight uppercase">
-                Locksmiths<span className="text-primary">24hour</span>
+                Locksmith<span className="text-primary">24hour</span>
               </span>
             </Link>
             <p className="text-sm text-[#8c97ad] max-w-sm">
@@ -69,7 +69,7 @@ export default function Footer() {
 
         {/* Bottom copyright and compliance */}
         <div className="mt-12 pt-8 border-t border-[#2e364d] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8c97ad]">
-          <p>&copy; {currentYear} Locksmiths24hour. All rights reserved.</p>
+          <p>&copy; {currentYear} Locksmith24hour. All rights reserved.</p>
           <div className="flex gap-4">
             <span>Coverage: England, Scotland & Wales Only</span>
             <span>&bull;</span>
