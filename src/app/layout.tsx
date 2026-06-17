@@ -21,6 +21,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const showBubble = process.env.NEXT_PUBLIC_SHOW_CTA_BUBBLE !== "false";
+
   return (
     <html lang="en-GB" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
@@ -28,7 +30,7 @@ export default function RootLayout({
         <main className="flex-1 pb-16 md:pb-0">{children}</main>
         <Footer />
         <StickyMobileBar />
-        <FloatingCTABubble />
+        {showBubble && <FloatingCTABubble />}
       </body>
     </html>
   );
