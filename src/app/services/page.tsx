@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MessageSquare, Unlock, Key, ShieldAlert, CheckCircle, Shield, Award } from 'lucide-react';
+import { PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
 
 export const metadata = {
   title: "Our Services — 24 Hour Emergency Locksmith | Locksmith24hour",
@@ -95,14 +96,14 @@ export default function Services() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto pt-2">
             <a
-              href="tel:07742831011"
+              href={`tel:${PHONE_NUMBER_RAW}`}
               className="flex items-center justify-center gap-3 w-full py-3 px-6 rounded-xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(255,217,0,0.25)] hover:scale-[1.02]"
             >
               <Phone className="h-4 w-4 fill-current" />
               Tap to Call Now
             </a>
             <a
-              href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-3 px-6 rounded-xl bg-[#25d366] text-white font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(37,211,102,0.2)] hover:scale-[1.02]"

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MessageSquare, HelpCircle } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
+import { PHONE_NUMBER, PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
 
 export const metadata = {
   title: "Contact Us — 24 Hour Locksmith | Locksmith24hour",
@@ -72,14 +73,14 @@ export default function Contact() {
 
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
               <a
-                href="tel:07742831011"
+                href={`tel:${PHONE_NUMBER_RAW}`}
                 className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-lg uppercase tracking-wider transition-premium shadow-[0_8px_32px_rgba(255,217,0,0.25)] hover:scale-[1.02] active:scale-[0.98]"
               >
                 <Phone className="h-5 w-5 fill-current" />
-                07742 831011
+                {PHONE_NUMBER}
               </a>
               <a
-                href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith"
+                href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-[#25d366] text-white font-black text-lg uppercase tracking-wider transition-premium shadow-[0_8px_32px_rgba(37,211,102,0.2)] hover:scale-[1.02] active:scale-[0.98]"

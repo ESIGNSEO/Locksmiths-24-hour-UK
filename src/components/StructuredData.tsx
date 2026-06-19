@@ -1,4 +1,5 @@
 import React from 'react';
+import { PHONE_NUMBER } from '@/utils/phone';
 
 interface StructuredDataProps {
   townName?: string;
@@ -25,7 +26,7 @@ export default function StructuredData({ townName, slug }: StructuredDataProps) 
     "alternateName": "locksmith24hour.co.uk",
     "url": url,
     "logo": "https://locksmith24hour.co.uk/logo.png",
-    "telephone": "07742 831011",
+    "telephone": PHONE_NUMBER,
     "description": description,
     "areaServed": townName ? [
       {

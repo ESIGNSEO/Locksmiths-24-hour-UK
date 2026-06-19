@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Key, Phone, Menu, X } from 'lucide-react';
+import { PHONE_NUMBER_RAW } from '@/utils/phone';
 
 export default function Header() {
   const pathname = usePathname();
@@ -57,7 +58,7 @@ export default function Header() {
         {/* Desktop CTA Call Button */}
         <div className="hidden md:block">
           <a
-            href="tel:07742831011"
+            href={`tel:${PHONE_NUMBER_RAW}`}
             className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium hover:-translate-y-0.5 shadow-[0_4px_20px_rgba(255,217,0,0.25)] hover:shadow-[0_6px_24px_rgba(255,217,0,0.4)]"
           >
             <Phone className="h-4 w-4 fill-current animate-pulse" />
@@ -96,7 +97,7 @@ export default function Header() {
           </nav>
           <div className="pt-2">
             <a
-              href="tel:07742831011"
+              href={`tel:${PHONE_NUMBER_RAW}`}
               className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-primary text-primary-foreground font-black uppercase tracking-wider text-center"
             >
               <Phone className="h-4 w-4 fill-current" />
