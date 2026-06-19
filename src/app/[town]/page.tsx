@@ -4,6 +4,7 @@ import { Phone, MessageSquare, CheckCircle, Clock, ShieldCheck, ShieldAlert, Awa
 import StructuredData from '@/components/StructuredData';
 import { locations } from '@/data/locations';
 import { generateSEOContent } from '@/utils/seo-engine';
+import { PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
 
 interface PageProps {
   params: Promise<{
@@ -82,14 +83,14 @@ export default async function TownLandingPage({ params }: PageProps) {
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto pt-2">
             <a
-              href="tel:07742831011"
+              href={`tel:${PHONE_NUMBER_RAW}`}
               className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_20px_rgba(255,217,0,0.25)] hover:scale-[1.02] active:scale-[0.98] animate-[pulse_2.8s_ease-in-out_infinite]"
             >
               <Phone className="h-4 w-4 fill-current" />
               Tap to Call Now
             </a>
             <a
-              href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith%20in%20"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith%20in%20`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-[#25d366] text-white font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_20px_rgba(37,211,102,0.2)] hover:scale-[1.02] active:scale-[0.98]"

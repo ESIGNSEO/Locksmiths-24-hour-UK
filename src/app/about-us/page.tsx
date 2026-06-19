@@ -1,5 +1,6 @@
 import React from 'react';
 import { Phone, MessageSquare, ShieldCheck, Award, ShieldAlert } from 'lucide-react';
+import { PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
 
 export const metadata = {
   title: "About Us — Locksmith24hour | DBS Checked | BS3621 Approved",
@@ -85,14 +86,14 @@ export default function AboutUs() {
         {/* Contact buttons */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4 border-t border-border">
           <a
-            href="tel:07742831011"
+            href={`tel:${PHONE_NUMBER_RAW}`}
             className="flex items-center justify-center gap-3 w-full sm:w-auto py-3 px-6 rounded-xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(255,217,0,0.25)]"
           >
             <Phone className="h-4 w-4 fill-current" />
             Tap to Call Now
           </a>
           <a
-            href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith"
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 w-full sm:w-auto py-3 px-6 rounded-xl bg-[#25d366] text-white font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(37,211,102,0.2)]"

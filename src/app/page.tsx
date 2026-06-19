@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { Phone, MessageSquare, Shield, Clock, Award, CheckCircle, ChevronRight, Unlock, Key, ShieldAlert, Sparkles } from 'lucide-react';
 import StructuredData from '@/components/StructuredData';
 import { locations } from '@/data/locations';
+import { PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
 
 export const metadata = {
   title: "Locksmith24hour | 24/7 Emergency Locksmith | DBS Checked | BS3621 Approved",
@@ -50,14 +51,14 @@ export default function Home() {
           {/* Action CTAs */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto pt-4">
             <a
-              href="tel:07742831011"
+              href={`tel:${PHONE_NUMBER_RAW}`}
               className="flex items-center justify-center gap-3 w-full py-4 px-8 rounded-2xl bg-primary text-primary-foreground font-black text-lg uppercase tracking-wider transition-premium shadow-[0_8px_32px_rgba(255,217,0,0.25)] hover:shadow-[0_12px_40px_rgba(255,217,0,0.45)] hover:-translate-y-0.5 active:scale-[0.98] animate-[pulse_2.8s_ease-in-out_infinite]"
             >
               <Phone className="h-5 w-5 fill-current" />
               Tap to Call Now
             </a>
             <a
-              href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-3 w-full py-4 px-8 rounded-2xl bg-[#25d366] text-white font-black text-lg uppercase tracking-wider transition-premium shadow-[0_8px_32px_rgba(37,211,102,0.2)] hover:shadow-[0_12px_40px_rgba(37,211,102,0.35)] hover:-translate-y-0.5 active:scale-[0.98]"

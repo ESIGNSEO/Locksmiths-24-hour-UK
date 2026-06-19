@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Phone, MessageSquare, X, MessageCircle } from 'lucide-react';
+import { PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
 
 export default function FloatingCTABubble() {
   const [isOpen, setIsOpen] = useState(true);
@@ -54,7 +55,7 @@ export default function FloatingCTABubble() {
           <div className="space-y-2.5">
             {/* Call Action */}
             <a
-              href="tel:07742831011"
+              href={`tel:${PHONE_NUMBER_RAW}`}
               className="flex items-center justify-center gap-2.5 w-full py-3 px-4 rounded-xl bg-primary text-primary-foreground font-black text-xs uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(255,217,0,0.25)] hover:scale-[1.02] active:scale-[0.98]"
             >
               <Phone className="h-3.5 w-3.5 fill-current animate-pulse-slow" />
@@ -63,7 +64,7 @@ export default function FloatingCTABubble() {
 
             {/* WhatsApp Action */}
             <a
-              href="https://wa.me/447742831011?text=Hello%2C%20I%20need%20a%20locksmith"
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center justify-center gap-2.5 w-full py-3 px-4 rounded-xl bg-[#25d366] text-white font-black text-xs uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(37,211,102,0.2)] hover:scale-[1.02] active:scale-[0.98]"
