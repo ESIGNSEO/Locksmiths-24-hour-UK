@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
 import SiteHeader from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -22,10 +23,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   const showBubble = process.env.NEXT_PUBLIC_SHOW_CTA_BUBBLE !== "false";
+  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  const isProduction = process.env.NODE_ENV === "production";
+  const shouldLoadTag = Boolean(googleAdsId && (isProduction || process.env.NEXT_PUBLIC_FORCE_TAG === "true"));
 
   return (
     <html lang="en-GB" className={`${inter.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        {shouldLoadTag && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+              strategy="afterInteractive"
+            />
+            <Script id="google-ads-gtag" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', '${googleAdsId}');
+              `}
+            </Script>
+          </>
+        )}
         <SiteHeader />
         <main className="flex-1 pb-16 md:pb-0">{children}</main>
         <Footer />
