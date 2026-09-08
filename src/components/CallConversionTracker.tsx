@@ -1,12 +1,13 @@
 'use client';
 
 import { useEffect } from 'react';
-import { trackCallConversion, trackWhatsAppConversion } from '@/utils/analytics';
+import { trackCallConversion, trackWhatsAppConversion, trackLeadFormConversion } from '@/utils/analytics';
 
 declare global {
   interface Window {
     gtag_report_conversion?: (url?: string) => boolean;
     gtag_report_whatsapp_conversion?: (url?: string) => boolean;
+    gtag_report_lead_form_conversion?: (url?: string) => boolean;
   }
 }
 
@@ -23,6 +24,10 @@ export default function CallConversionTracker() {
 
     window.gtag_report_whatsapp_conversion = (url?: string) => {
       return trackWhatsAppConversion(url);
+    };
+
+    window.gtag_report_lead_form_conversion = (url?: string) => {
+      return trackLeadFormConversion(url);
     };
 
     // Global event delegation for phone call and WhatsApp links

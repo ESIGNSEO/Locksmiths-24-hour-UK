@@ -66,3 +66,35 @@ export function trackWhatsAppConversion(url?: string): boolean {
   return false;
 }
 
+export function trackLeadFormConversion(url?: string): boolean {
+  if (typeof window === 'undefined') return false;
+
+  const adsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID || 'AW-18413871642';
+  const label = process.env.NEXT_PUBLIC_GOOGLE_ADS_LEAD_FORM_CONVERSION_LABEL || 'CJOaCNrxiPEcEJrEtcxE';
+  const sendTo = `${adsId}/${label}`;
+
+  const callback = () => {
+    if (url && typeof url === 'string') {
+      window.location.href = url;
+    }
+  };
+
+  if (typeof (window as any).gtag === 'function') {
+    (window as any).gtag('event', 'conversion', {
+      send_to: sendTo,
+      event_callback: callback,
+    });
+  } else {
+    // Development or fallback logging when gtag is not active
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(`[Google Ads Conversion] Lead Form event triggered for: ${sendTo}`);
+    }
+    if (url) {
+      callback();
+    }
+  }
+
+  return false;
+}
+
+

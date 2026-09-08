@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { trackLeadFormConversion } from '@/utils/analytics';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -39,6 +40,7 @@ export default function ContactForm() {
       }
 
       setStatus('success');
+      trackLeadFormConversion();
       setFormData({ name: '', phone: '', location: '', message: '' });
     } catch (err: unknown) {
       console.error(err);
