@@ -1,7 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
-import { Key, Phone, ShieldCheck } from 'lucide-react';
+import { Key, Phone, ShieldCheck, MapPin } from 'lucide-react';
 import { PHONE_NUMBER_RAW } from '@/utils/phone';
+import { BUSINESS_ADDRESS } from '@/utils/address';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -27,6 +28,10 @@ export default function Footer() {
             <div className="flex items-center gap-2 text-primary font-bold text-lg pt-2">
               <Phone className="h-5 w-5 fill-current" />
               <a href={`tel:${PHONE_NUMBER_RAW}`} className="hover:underline">Tap to Call Now</a>
+            </div>
+            <div className="flex items-start gap-2 text-xs text-[#8c97ad] pt-1">
+              <MapPin className="h-4 w-4 text-primary shrink-0 mt-0.5" />
+              <span>{BUSINESS_ADDRESS.full}</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-[#8c97ad] bg-[#141c34] border border-[#2e364d] p-3 rounded-xl max-w-md">
               <ShieldCheck className="h-5 w-5 text-primary shrink-0" />
@@ -70,7 +75,10 @@ export default function Footer() {
 
         {/* Bottom copyright and compliance */}
         <div className="mt-12 pt-8 border-t border-[#2e364d] flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[#8c97ad]">
-          <p>&copy; {currentYear} Locksmith24hour. All rights reserved.</p>
+          <div>
+            <p>&copy; {currentYear} Locksmith24hour. All rights reserved.</p>
+            <p className="text-[11px] text-[#6b768e] mt-1">Physical Address: {BUSINESS_ADDRESS.full}</p>
+          </div>
           <div className="flex gap-4">
             <span>Coverage: England, Scotland & Wales Only</span>
             <span>&bull;</span>

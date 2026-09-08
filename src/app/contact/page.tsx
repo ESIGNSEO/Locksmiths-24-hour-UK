@@ -1,7 +1,8 @@
 import React from 'react';
-import { Phone, MessageSquare, HelpCircle } from 'lucide-react';
+import { Phone, MessageSquare, HelpCircle, MapPin } from 'lucide-react';
 import ContactForm from '@/components/ContactForm';
 import { PHONE_NUMBER, PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
+import { BUSINESS_ADDRESS } from '@/utils/address';
 
 export const metadata = {
   title: "Contact Us — 24 Hour Locksmith | Locksmith24hour",
@@ -88,6 +89,20 @@ export default function Contact() {
                 <MessageSquare className="h-5 w-5 fill-current" />
                 WhatsApp Us
               </a>
+            </div>
+
+            {/* Physical Office Address */}
+            <div className="bg-card border border-border p-5 rounded-2xl flex items-start gap-4 shadow-sm">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div className="space-y-1">
+                <h3 className="text-xs font-bold uppercase tracking-wider text-primary">Physical Office Address</h3>
+                <p className="text-sm font-bold text-foreground">{BUSINESS_ADDRESS.full}</p>
+                <p className="text-xs text-muted-foreground">
+                  Head office and regional dispatch base. Locksmith technicians deployed across England, Scotland, and Wales.
+                </p>
+              </div>
             </div>
           </div>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { PHONE_NUMBER } from '@/utils/phone';
+import { BUSINESS_ADDRESS } from '@/utils/address';
 
 interface StructuredDataProps {
   townName?: string;
@@ -28,6 +29,14 @@ export default function StructuredData({ townName, slug }: StructuredDataProps) 
     "logo": "https://locksmith24hour.co.uk/logo.png",
     "telephone": PHONE_NUMBER,
     "description": description,
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": BUSINESS_ADDRESS.street,
+      "addressLocality": BUSINESS_ADDRESS.locality,
+      "addressRegion": BUSINESS_ADDRESS.region,
+      "postalCode": BUSINESS_ADDRESS.postcode,
+      "addressCountry": BUSINESS_ADDRESS.countryCode
+    },
     "areaServed": townName ? [
       {
         "@type": "AdministrativeArea",

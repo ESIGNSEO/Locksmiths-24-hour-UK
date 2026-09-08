@@ -1,6 +1,7 @@
 import React from 'react';
-import { Phone, MessageSquare, ShieldCheck, Award, ShieldAlert } from 'lucide-react';
+import { Phone, MessageSquare, ShieldCheck, Award, ShieldAlert, MapPin } from 'lucide-react';
 import { PHONE_NUMBER_RAW, WHATSAPP_NUMBER } from '@/utils/phone';
+import { BUSINESS_ADDRESS } from '@/utils/address';
 
 export const metadata = {
   title: "About Us — Locksmith24hour | DBS Checked | BS3621 Approved",
@@ -57,6 +58,22 @@ export default function AboutUs() {
                 We stock and fit high-security hardware that complies with British Standard BS3621 and carries the Kitemark logo, ensuring your locks comply with building and home contents insurance.
               </p>
             </div>
+          </div>
+
+          {/* Registered Office & Operational Base */}
+          <div className="bg-card border border-border p-6 rounded-2xl space-y-3">
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary shrink-0">
+                <MapPin className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="text-md font-bold uppercase text-foreground">Registered Office & Operational Base</h3>
+                <p className="text-xs text-primary font-semibold">{BUSINESS_ADDRESS.full}</p>
+              </div>
+            </div>
+            <p className="text-xs text-muted-foreground leading-relaxed pt-1">
+              Our central administrative headquarters coordinates rapid response dispatch across England, Scotland, and Wales, working directly with fully equipped, vetted mobile engineers stationed permanently in their local areas.
+            </p>
           </div>
         </div>
 
