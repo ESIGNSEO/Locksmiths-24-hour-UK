@@ -6,6 +6,7 @@ import SiteHeader from "@/components/Header";
 import Footer from "@/components/Footer";
 import StickyMobileBar from "@/components/StickyMobileBar";
 import FloatingCTABubble from "@/components/FloatingCTABubble";
+import CallConversionTracker from "@/components/CallConversionTracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -51,6 +52,7 @@ export default function RootLayout({
         <Footer />
         <StickyMobileBar />
         {showBubble && <FloatingCTABubble />}
+        <CallConversionTracker />
       </body>
     </html>
   );
