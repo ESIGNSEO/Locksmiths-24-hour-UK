@@ -1,6 +1,6 @@
 import React from 'react';
 import { notFound, permanentRedirect } from 'next/navigation';
-import { Phone, MessageSquare, CheckCircle, Clock, ShieldCheck, ShieldAlert, Award } from 'lucide-react';
+import { Phone, MessageSquare, CheckCircle, Clock, ShieldCheck, ShieldAlert, Award, HelpCircle, CalendarDays } from 'lucide-react';
 import StructuredData from '@/components/StructuredData';
 import { locations } from '@/data/locations';
 import { generateSEOContent } from '@/utils/seo-engine';
@@ -77,6 +77,8 @@ export default async function TownLandingPage({ params }: PageProps) {
         country={location.country}
         villages={location.villages}
         postcodes={location.postcodes}
+        faqItems={seo.faqItems}
+        lastUpdated={seo.lastUpdated}
       />
 
       {/* Hero Section */}
@@ -137,6 +139,18 @@ export default async function TownLandingPage({ params }: PageProps) {
               <Award className="h-5 w-5 fill-current shrink-0" />
               No Call-Out Fee
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TL;DR Summary — AI-extractable quick answer */}
+      <section className="px-4 sm:px-6 lg:px-8 py-6 bg-background">
+        <div className="mx-auto max-w-4xl">
+          <div className="bg-secondary/30 border border-border rounded-2xl p-6">
+            <p className="text-xs font-bold uppercase tracking-wider text-primary mb-2">Summary</p>
+            <p className="text-sm text-muted-foreground leading-relaxed">
+              {seo.tldr}
+            </p>
           </div>
         </div>
       </section>
@@ -276,6 +290,38 @@ export default async function TownLandingPage({ params }: PageProps) {
         </div>
       </section>
 
+      {/* FAQ Section — GEO: AI engines extract Q&A directly for citations */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
+        <div className="mx-auto max-w-4xl space-y-8">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <h2 className="text-2xl sm:text-3xl font-black uppercase text-foreground">
+              Frequently Asked Questions — {location.name}
+            </h2>
+            <p className="text-xs text-muted-foreground">
+              Common questions about our locksmith services in {location.name} and {location.county}.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {seo.faqItems.map((faq, idx) => (
+              <details
+                key={idx}
+                className="group bg-card border border-border rounded-2xl shadow-sm overflow-hidden"
+              >
+                <summary className="flex items-start gap-3 p-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden">
+                  <HelpCircle className="h-5 w-5 text-primary shrink-0 mt-0.5" />
+                  <span className="text-sm font-bold text-foreground flex-1">{faq.question}</span>
+                  <span className="text-muted-foreground text-xs font-bold transition-transform group-open:rotate-45 shrink-0">+</span>
+                </summary>
+                <div className="px-5 pb-5 pl-13">
+                  <p className="text-xs text-muted-foreground leading-relaxed">{faq.answer}</p>
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Local Service Snapshot & Verification */}
       <section className="py-12 px-4 sm:px-6 lg:px-8 bg-secondary/10 border-t border-border">
         <div className="mx-auto max-w-4xl space-y-6">
@@ -343,6 +389,14 @@ export default async function TownLandingPage({ params }: PageProps) {
                 {PHONE_NUMBER}
               </a>{' '}
               for 15–30 minute arrival.
+            </p>
+          </div>
+
+          {/* Last Updated timestamp — GEO freshness signal */}
+          <div className="text-center pt-4">
+            <p className="inline-flex items-center gap-1.5 text-[11px] text-muted-foreground">
+              <CalendarDays className="h-3 w-3" />
+              Page last updated: <time dateTime={seo.lastUpdated}>{seo.lastUpdated}</time>
             </p>
           </div>
         </div>

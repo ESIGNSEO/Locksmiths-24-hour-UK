@@ -1,6 +1,7 @@
 import React from 'react';
 import { PHONE_NUMBER } from '@/utils/phone';
 import { BUSINESS_ADDRESS } from '@/utils/address';
+import type { FAQItem } from '@/utils/seo-engine';
 
 interface StructuredDataProps {
   townName?: string;
@@ -9,6 +10,8 @@ interface StructuredDataProps {
   country?: string;
   villages?: string[];
   postcodes?: string[];
+  faqItems?: FAQItem[];
+  lastUpdated?: string;
 }
 
 export default function StructuredData({
@@ -17,7 +20,9 @@ export default function StructuredData({
   county,
   country,
   villages = [],
-  postcodes = []
+  postcodes = [],
+  faqItems = [],
+  lastUpdated,
 }: StructuredDataProps) {
   const url = slug 
     ? `https://locksmith24hour.co.uk/${slug}`
@@ -57,7 +62,7 @@ export default function StructuredData({
     );
   }
 
-  const schema = {
+  const schema: Record<string, unknown> = {
     "@context": "https://schema.org",
     "@type": "Locksmith",
     "name": name,
@@ -106,10 +111,39 @@ export default function StructuredData({
     "priceRange": "££"
   };
 
+  // Add date fields for freshness signals (GEO)
+  if (lastUpdated) {
+    schema["datePublished"] = "2024-01-15";
+    schema["dateModified"] = lastUpdated;
+  }
+
+  // FAQPage structured data (separate schema for rich results + AI extraction)
+  const faqSchema = faqItems.length > 0 ? {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map((item) => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer,
+      },
+    })),
+  } : null;
+
   return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+    </>
   );
 }
+

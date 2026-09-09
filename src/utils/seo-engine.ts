@@ -31,11 +31,17 @@ function parseSpintax(text: string, random: () => number): string {
   return spun;
 }
 
+export interface FAQItem {
+  question: string;
+  answer: string;
+}
+
 export interface GeneratedSEOContent {
   metaTitle: string;
   metaDescription: string;
   h1: string;
   heroText: string;
+  tldr: string;
   introParagraph1: string;
   introParagraph2: string;
   whyChooseUsText: string;
@@ -51,6 +57,8 @@ export interface GeneratedSEOContent {
   safeOpeningDesc: string;
   commercialSecurityTitle: string;
   commercialSecurityDesc: string;
+  faqItems: FAQItem[];
+  lastUpdated: string;
 }
 
 export function generateSEOContent(townName: string, countyName: string, postcodes: string[]): GeneratedSEOContent {
@@ -163,6 +171,44 @@ export function generateSEOContent(townName: string, countyName: string, postcod
     random
   );
 
+  // TL;DR — concise, AI-extractable summary
+  const tldrSpintax = parseSpintax(
+    "{Locksmith24hour provides 24/7 emergency locksmith services in [Town], [County]. Local DBS-checked engineers arrive within 30 minutes, with no call-out fee. We supply BS3621 insurance-approved locks from Yale, Chubb, and ERA, backed by a 12-month parts warranty and £5M public liability insurance.|Need an emergency locksmith in [Town]? Locksmith24hour operates 24 hours a day across [County], dispatching fully vetted, DBS-checked locksmiths who arrive in under 30 minutes. No call-out fee. All locks are British Standard BS3621 approved and insurance-compliant.|Locksmith24hour is a 24-hour emergency locksmith service permanently based in [Town], [County]. Our DBS-checked engineers carry BS3621 approved locks and arrive within 30 minutes. Zero call-out fee, 12-month parts warranty, £5M insurance cover.}",
+    random
+  );
+
+  // FAQ items — 5 Q&A pairs, spintax-rotated per town for content uniqueness
+  const faqPairs: Array<{ q: string; a: string }> = [
+    {
+      q: "{How quickly can a locksmith get to me in [Town]?|What is the locksmith response time in [Town]?|How fast do you arrive in [Town]?}",
+      a: "{Our locksmiths are permanently based in [Town] and surrounding areas, so we typically arrive within 15–30 minutes of your call, 24 hours a day, 365 days a year.|Because we have local engineers in [Town], [County], our average response time is 15–30 minutes. We operate around the clock, including bank holidays and weekends.|We dispatch from within the [Town] area, guaranteeing a maximum 30-minute arrival time. Day or night, our local team is always nearby.}"
+    },
+    {
+      q: "{Is there a call-out fee for locksmith services in [Town]?|Do you charge a call-out fee in [Town]?|What does it cost to call a locksmith in [Town]?}",
+      a: "{No. We never charge a call-out fee. You only pay for the labour and parts once the work is completed. We agree on pricing before starting, so there are no hidden charges or surprises.|Absolutely not — there is zero call-out fee, day or night. We provide an upfront, transparent quote before any work begins, so you know exactly what you are paying.|We have a strict no call-out fee policy across all of [Town] and [County]. Payment is only due upon completion, and we always agree the price before we start.}"
+    },
+    {
+      q: "{Are your locksmiths in [Town] DBS checked?|Do you use vetted locksmiths in [Town]?|How do I know your locksmith is trustworthy?}",
+      a: "{Yes. Every locksmith we send to properties in [Town] holds a current DBS (Disclosure and Barring Service) certificate. We also carry full public liability insurance up to £5 million.|All of our engineers are fully DBS checked and vetted before attending any job. We carry £5M public liability insurance and only employ experienced, certified professionals.|100%. We require all technicians covering [Town] to hold a valid, up-to-date DBS check. Our team is fully insured with £5 million public liability cover for your peace of mind.}"
+    },
+    {
+      q: "{What types of locks do you install in [Town]?|Do you fit insurance-approved locks in [Town]?|What lock brands do you use?}",
+      a: "{We supply and fit locks from leading manufacturers including Yale, Chubb, ERA, Union, and Banham. All replacements meet British Standard BS3621, which is required by most UK home insurance policies.|Our mobile workshops carry a full stock of BS3621 insurance-approved locks from Yale, ERA, and Chubb. Every lock we install is Kitemark certified and insurance-compliant.|We exclusively install British Standard BS3621 approved locks from trusted brands like Yale, Chubb, and Banham. All hardware comes with a 12-month manufacturer warranty.}"
+    },
+    {
+      q: "{Can you open my locked car in [Town]?|Do you provide auto locksmith services in [Town]?|I'm locked out of my car in [Town] — can you help?}",
+      a: "{Yes, we can open your locked vehicle in [Town]. However, our auto locksmith service is strictly limited to opening locked cars only. We do not provide car key cutting, transponder key programming, or remote fob replacement.|We offer a vehicle lockout service across [Town] and surrounding areas. Please note: this service only covers opening locked vehicles. We cannot cut car keys, program transponders, or replace key fobs.|Our auto locksmith can get you back into your locked car in [Town] quickly using non-destructive methods. Important: we only open locked vehicles — car key cutting and programming are not services we provide.}"
+    },
+  ];
+
+  const faqItems: FAQItem[] = faqPairs.map((pair) => ({
+    question: replaceDetailsFn(parseSpintax(pair.q, random), townName, countyName, mainPostcode),
+    answer: replaceDetailsFn(parseSpintax(pair.a, random), townName, countyName, mainPostcode),
+  }));
+
+  // Last updated timestamp (build date)
+  const lastUpdated = new Date().toISOString().split('T')[0];
+
   // Replacer function to inject town specific details
   const replaceDetails = (text: string) => {
     return text
@@ -176,6 +222,7 @@ export function generateSEOContent(townName: string, countyName: string, postcod
     metaDescription: replaceDetails(metaDescSpintax),
     h1: replaceDetails(h1Spintax),
     heroText: replaceDetails(heroTextSpintax),
+    tldr: replaceDetails(tldrSpintax),
     introParagraph1: replaceDetails(intro1Spintax),
     introParagraph2: replaceDetails(intro2Spintax),
     whyChooseUsText: replaceDetails(whyChooseUsSpintax),
@@ -191,5 +238,16 @@ export function generateSEOContent(townName: string, countyName: string, postcod
     safeOpeningDesc: replaceDetails(safeOpeningDesc),
     commercialSecurityTitle: replaceDetails(commercialSecurityTitle),
     commercialSecurityDesc: replaceDetails(commercialSecurityDesc),
+    faqItems,
+    lastUpdated,
   };
 }
+
+// Standalone replacer used before the closure is available (for FAQ items)
+function replaceDetailsFn(text: string, townName: string, countyName: string, postcode: string): string {
+  return text
+    .replaceAll("[Town]", townName)
+    .replaceAll("[County]", countyName)
+    .replaceAll("[Postcode]", postcode);
+}
+
