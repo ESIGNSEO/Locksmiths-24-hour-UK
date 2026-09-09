@@ -1,5 +1,5 @@
 // Auto-generated locations dataset - England, Scotland, Wales (no Northern Ireland)
-// Total towns: 1847
+// Total towns: 1848
 
 export interface LocationInfo {
   name: string;
@@ -39693,6 +39693,27 @@ export const locations: LocationInfo[] = [
       "Rhayaton Common",
       "New Rhayafield",
       "Rhayaton Corner"
+    ]
+  },
+  {
+    "name": "Ponteland",
+    "slug": "locksmith-ponteland",
+    "county": "Northumberland",
+    "country": "England",
+    "postcodes": [
+      "NE20"
+    ],
+    "villages": [
+      "Darras Hall",
+      "Prestwick",
+      "Medburn",
+      "Stannington",
+      "Callerton",
+      "Heddon-on-the-Wall",
+      "Dinnington",
+      "Kirkley",
+      "Belsay",
+      "High Callerton"
     ]
   }
 ];

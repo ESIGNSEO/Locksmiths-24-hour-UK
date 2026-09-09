@@ -1,5 +1,5 @@
 import React from 'react';
-import { notFound } from 'next/navigation';
+import { notFound, permanentRedirect } from 'next/navigation';
 import { Phone, MessageSquare, CheckCircle, Clock, ShieldCheck, ShieldAlert, Award } from 'lucide-react';
 import StructuredData from '@/components/StructuredData';
 import { locations } from '@/data/locations';
@@ -26,6 +26,11 @@ export async function generateMetadata({ params }: PageProps) {
     return {};
   }
 
+  // Handle alias redirects
+  if (town === "locksmith-livingstone") {
+    return {};
+  }
+
   const location = locations.find((loc) => loc.slug === town);
 
   if (!location) {
@@ -49,6 +54,10 @@ export default async function TownLandingPage({ params }: PageProps) {
   // Enforce locksmith- prefix check to avoid conflict with static pages
   if (!town.startsWith("locksmith-")) {
     notFound();
+  }
+
+  if (town === "locksmith-livingstone") {
+    permanentRedirect("/locksmith-livingston");
   }
 
   const location = locations.find((loc) => loc.slug === town);
