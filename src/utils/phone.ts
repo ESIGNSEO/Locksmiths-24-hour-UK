@@ -1,4 +1,5 @@
 export const PHONE_NUMBER = process.env.NEXT_PUBLIC_PHONE_NUMBER || "07546852375";
+const WHATSAPP_PHONE_NUMBER = process.env.NEXT_PUBLIC_WHATSAPP_PHONE_NUMBER || "07546852375";
 export const PHONE_NUMBER_RAW = PHONE_NUMBER.replace(/\s+/g, "");
 
 export function getWhatsAppNumber(phone: string): string {
@@ -11,4 +12,4 @@ export function getWhatsAppNumber(phone: string): string {
   return clean;
 }
 
-export const WHATSAPP_NUMBER = getWhatsAppNumber(PHONE_NUMBER);
+export const WHATSAPP_NUMBER = getWhatsAppNumber(WHATSAPP_PHONE_NUMBER);

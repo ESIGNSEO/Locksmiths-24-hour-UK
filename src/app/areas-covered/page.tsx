@@ -26,7 +26,32 @@ export default function AreasCovered() {
   return (
     <div className="py-16 bg-background text-foreground px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl space-y-12">
-        
+        {/* Bottom CTA */}
+        <div className="bg-[#0a1029] text-white p-10 rounded-3xl border border-[#2e364d] text-center space-y-6 max-w-3xl mx-auto pt-10">
+          <h3 className="text-xl font-bold uppercase text-foreground">Don&apos;t See Your Town Listed?</h3>
+          <p className="text-sm text-[#8c97ad] max-w-xl mx-auto leading-relaxed">
+            We cover 100% of addresses in England, Scotland, and Wales (excluding Northern Ireland). Call us with your postcode and we will dispatch the nearest locksmith immediately.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto pt-2">
+            <a
+              href={`tel:${PHONE_NUMBER_RAW}`}
+              className="flex items-center justify-center gap-3 w-full py-3 px-6 rounded-xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(255,217,0,0.25)]"
+            >
+              <Phone className="h-4 w-4 fill-current" />
+              Tap to Call
+            </a>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center gap-3 w-full py-3 px-6 rounded-xl bg-[#25d366] text-white font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(37,211,102,0.2)]"
+            >
+              <MessageSquare className="h-4 w-4 fill-current" />
+              WhatsApp Us
+            </a>
+          </div>
+        </div>
+
         {/* Title */}
         <div className="text-center space-y-4 max-w-3xl mx-auto">
           <h1 className="text-4xl font-black tracking-tight uppercase text-foreground">
@@ -55,7 +80,7 @@ export default function AreasCovered() {
               <h2 className="text-2xl font-black uppercase border-b border-border pb-2 text-foreground">
                 {country} Locations
               </h2>
-              
+
               <div className="space-y-8">
                 {Object.keys(directory[country]).map(county => (
                   <div key={county} className="space-y-3">
@@ -77,33 +102,6 @@ export default function AreasCovered() {
             </div>
           ))}
         </div>
-
-        {/* Bottom CTA */}
-        <div className="bg-[#0a1029] text-white p-10 rounded-3xl border border-[#2e364d] text-center space-y-6 max-w-3xl mx-auto pt-10">
-          <h3 className="text-xl font-bold uppercase text-foreground">Don&apos;t See Your Town Listed?</h3>
-          <p className="text-sm text-[#8c97ad] max-w-xl mx-auto leading-relaxed">
-            We cover 100% of addresses in England, Scotland, and Wales (excluding Northern Ireland). Call us with your postcode and we will dispatch the nearest locksmith immediately.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto pt-2">
-            <a
-              href={`tel:${PHONE_NUMBER_RAW}`}
-              className="flex items-center justify-center gap-3 w-full py-3 px-6 rounded-xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(255,217,0,0.25)]"
-            >
-              <Phone className="h-4 w-4 fill-current" />
-              Tap to Call Now
-            </a>
-            <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 w-full py-3 px-6 rounded-xl bg-[#25d366] text-white font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(37,211,102,0.2)]"
-            >
-              <MessageSquare className="h-4 w-4 fill-current" />
-              WhatsApp Us
-            </a>
-          </div>
-        </div>
-
       </div>
     </div>
   );

@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { town } = await params;
-  
+
   // Only handle locksmith- prefixes, delegate other routes
   if (!town.startsWith("locksmith-")) {
     return {};
@@ -105,7 +105,7 @@ export default async function TownLandingPage({ params }: PageProps) {
               className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_20px_rgba(255,217,0,0.25)] hover:scale-[1.02] active:scale-[0.98] animate-[pulse_2.8s_ease-in-out_infinite]"
             >
               <Phone className="h-4 w-4 fill-current" />
-              Tap to Call Now
+              Tap to Call
             </a>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith%20in%20`}

@@ -12,7 +12,7 @@ export default function AboutUs() {
   return (
     <div className="py-16 bg-background text-foreground px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-3xl space-y-12">
-        
+
         {/* Title */}
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-black tracking-tight uppercase text-foreground">
@@ -27,7 +27,7 @@ export default function AboutUs() {
         <div className="space-y-4">
           <h2 className="text-2xl font-black uppercase text-foreground">Our History & Model</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            Founded in 2004, Locksmith24hour began as a family-run locksmith team based on a simple but effective model: **truly local response**. Instead of dispatching engineers from distant call centres, we work with locksmith technicians permanently based directly within your local community. 
+            Founded in 2004, Locksmith24hour began as a family-run locksmith team based on a simple but effective model: **truly local response**. Instead of dispatching engineers from distant call centres, we work with locksmith technicians permanently based directly within your local community.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             Over the past 22 years, our network has expanded to cover every main town and city across England, Scotland, and Wales. By keeping our engineers local, we guarantee a maximum 30-minute response time for emergency situations, day or night.
@@ -37,7 +37,7 @@ export default function AboutUs() {
         {/* Credentials and Standards */}
         <div className="space-y-6">
           <h2 className="text-2xl font-black uppercase text-foreground">Our Qualifications & Standards</h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-card border border-border p-6 rounded-2xl space-y-3">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10 text-primary">
@@ -93,7 +93,7 @@ export default function AboutUs() {
         <div className="space-y-4">
           <h2 className="text-2xl font-black uppercase text-foreground">Our Guarantees</h2>
           <p className="text-sm text-muted-foreground leading-relaxed">
-            We stand by the quality of our locksmith services. All replacement lock mechanisms and security hardware fitted come with a **12-month manufacturer parts warranty**. Additionally, all work completed by our engineers is backed by a **90-day labour guarantee**. 
+            We stand by the quality of our locksmith services. All replacement lock mechanisms and security hardware fitted come with a **12-month manufacturer parts warranty**. Additionally, all work completed by our engineers is backed by a **90-day labour guarantee**.
           </p>
           <p className="text-sm text-muted-foreground leading-relaxed">
             We provide transparent pricing: we quote and agree on the final cost before starting the work. There are no hidden fees or call-out charges.
@@ -107,7 +107,7 @@ export default function AboutUs() {
             className="flex items-center justify-center gap-3 w-full sm:w-auto py-3 px-6 rounded-xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_16px_rgba(255,217,0,0.25)]"
           >
             <Phone className="h-4 w-4 fill-current" />
-            Tap to Call Now
+            Tap to Call
           </a>
           <a
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}

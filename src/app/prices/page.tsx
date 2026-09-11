@@ -38,7 +38,7 @@ export default function PricesPage() {
               className="flex items-center justify-center gap-3 w-full py-4 px-6 rounded-2xl bg-primary text-primary-foreground font-black text-sm uppercase tracking-wider transition-premium shadow-[0_4px_20px_rgba(255,217,0,0.25)] hover:scale-[1.02] active:scale-[0.98] animate-[pulse_2.8s_ease-in-out_infinite]"
             >
               <Phone className="h-4 w-4 fill-current" />
-              Tap to Call Now
+              Tap to Call
             </a>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=Hello%2C%20I%20need%20a%20locksmith`}
@@ -79,11 +79,11 @@ export default function PricesPage() {
       {/* Service Cards Price List */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="mx-auto max-w-5xl space-y-12">
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {locksmithPrices.map((item) => (
-              <div 
-                key={item.id} 
+              <div
+                key={item.id}
                 className="bg-card border border-border p-6 rounded-3xl flex flex-col justify-between shadow-sm transition-premium hover:-translate-y-1 hover:shadow-md"
               >
                 <div className="space-y-4">
@@ -96,7 +96,7 @@ export default function PricesPage() {
                     {item.description}
                   </p>
                 </div>
-                
+
                 <div className="pt-6 mt-4 border-t border-border flex items-center justify-between">
                   <span className="text-xs font-bold text-muted-foreground uppercase tracking-wider">
                     {item.isEstimated ? 'Est. starting rate' : 'Standard rate'}

@@ -16,7 +16,7 @@ updated: 2026-06-10
 - **Method:** Seeded deterministic spintax generator using the town name as the seed. Ensures distinct page copies across 1,847 locations while preventing React hydration mismatches.
 
 ## Project Constraints
-- **Phone Number:** `07742 831011` displayed ONLY on the contact page. On all other pages, buttons display "Tap to Call" or "Tap to Call Now" to prompt opening the dialer, linking directly to `tel:07742831011`.
+- **Phone Number:** `07742 831011` displayed ONLY on the contact page. On all other pages, buttons display "Tap to Call" or "Tap to Call" to prompt opening the dialer, linking directly to `tel:07742831011`.
 - **No Email Address:** Emails are strictly forbidden on the website.
 - **Coverage:** Limited to England, Scotland, and Wales (excluding Northern Ireland).
 - **Auto-Locksmith Limitations:** Explicitly states that car locksmith services are strictly limited to opening locked vehicles (no car key cutting, remote programming, or transponder configuration).
