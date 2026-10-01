@@ -25,8 +25,12 @@ export default function RootLayout({
 }>) {
   const showBubble = process.env.NEXT_PUBLIC_SHOW_CTA_BUBBLE !== "false";
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID;
+  const googleAnalyticsId = "G-5XXEZYD7LF";
   const isProduction = process.env.NODE_ENV === "production";
-  const shouldLoadTag = Boolean(googleAdsId && (isProduction || process.env.NEXT_PUBLIC_FORCE_TAG === "true"));
+  const shouldLoadTag = Boolean(
+    (googleAdsId || googleAnalyticsId) &&
+      (isProduction || process.env.NEXT_PUBLIC_FORCE_TAG === "true")
+  );
 
   return (
     <html lang="en-GB" className={`${inter.variable} h-full antialiased`}>
@@ -34,15 +38,16 @@ export default function RootLayout({
         {shouldLoadTag && (
           <>
             <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
+              src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId || googleAnalyticsId}`}
               strategy="afterInteractive"
             />
-            <Script id="google-ads-gtag" strategy="afterInteractive">
+            <Script id="google-gtag" strategy="afterInteractive">
               {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', '${googleAdsId}');
+                ${googleAdsId ? `gtag('config', '${googleAdsId}');` : ""}
+                gtag('config', '${googleAnalyticsId}');
               `}
             </Script>
           </>
