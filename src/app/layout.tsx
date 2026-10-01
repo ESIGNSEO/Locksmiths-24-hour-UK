@@ -16,6 +16,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Locksmith24hour | 24/7 Emergency Locksmith | DBS Checked",
   description: "Local emergency locksmiths across England, Scotland & Wales — arrive ≤30 mins, no call-out fee, all locks insurance-approved, DBS-checked technicians.",
+  verification: {
+    other: {
+      "msvalidate.01": "F40C0C27CCD03301AFCA7E4D8FD738B0",
+    },
+  },
 };
 
 export default function RootLayout({
